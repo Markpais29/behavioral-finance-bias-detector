@@ -1,12 +1,13 @@
 import yfinance as yf
 import pandas as pd
+from datetime import datetime
 
 stocks = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA',
           'NVDA', 'META', 'JPM', 'BAC', 'NFLX',
           'SPY']
 
 start_date = '2019-01-01'
-end_date = '2024-07-01'
+end_date = datetime.today().strftime('%Y-%m-%d')
 
 data = yf.download(stocks, start=start_date, end=end_date)
 
